@@ -1,7 +1,11 @@
+<p id="notice"></p>
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
       <h2>Editing Book</h2>
+      <!--登録失敗時のエラーメッセージの出力-->
+      <%= render 'layouts/err_msg', book_user: @book %>
+
       <%= form_with model:@book, local:true do |f| %>
         <div class="form-group">
           <%= f.label :Title %>
@@ -12,7 +16,7 @@
           <%= f.text_area :body, class:"form-control introduction"  %>
         </div>
         <div class="form-group">
-          <%= f.submit 'Update Book', class:"btn btn-secondary" %>
+          <%= f.submit 'Update Book', class:"btn btn-success" %>
         </div>
       <% end %>
       <!--詳細画面・一覧画面へのリンク-->
